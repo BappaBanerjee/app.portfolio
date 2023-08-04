@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import About from "../about";
 
 const Navbar = () => {
   return (
@@ -21,6 +20,7 @@ const Navbar = () => {
             <a
               href="https://drive.google.com/file/d/1n_sMDU9nQOSNxdmarlcTH2IeKWRzSVDb/view?usp=sharing"
               target="_blank"
+              rel="noreferrer"
             >
               <button
                 type="button"
