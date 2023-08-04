@@ -3,6 +3,7 @@ import developer from "../../assets/developer2.png";
 import solidity from "../../assets/solidity.png";
 import ethereum from "../../assets/ethereum.png";
 import { Link } from "react-router-dom";
+// import ScrollAnimation from "react-animate-on-scroll";
 const About = () => {
   return (
     <div className="container mx-auto">
@@ -45,11 +46,13 @@ const About = () => {
           </div>
         </div>
         <div className="basis-1/2 flex justify-center items-center">
-          <img src={developer} />
+          <img src={developer} alt="developer" />
         </div>
       </div>
 
       <hr class="h-px my-20 bg-gray-200 border-0 dark:bg-gray-700"></hr>
+
+      {/* <ScrollAnimation animateIn="fadeIn">Some Text</ScrollAnimation> */}
 
       {/* My skills */}
       <div>
@@ -58,35 +61,35 @@ const About = () => {
         </div>
         <div className="Skills flex flex-wrap gap-10 items-center justify-center">
           <div className="text-center border border-solid border-gray-50 rounded-lg p-5 mx-5">
-            <img src={solidity} className="h-32 w-32" />
+            <img src={solidity} className="h-32 w-32" alt="skills" />
             Solidity
           </div>
           <div className="text-center border border-solid border-gray-50 rounded-lg p-5 mx-5">
-            <img src={ethereum} className="h-32 w-32" />
+            <img src={ethereum} className="h-32 w-32" alt="skills" />
             Ethereum
           </div>
           <div className="text-center border border-solid border-gray-50 rounded-lg p-5 mx-5">
-            <img src={solidity} className="h-32 w-32" />
+            <img src={solidity} className="h-32 w-32" alt="skills" />
             Solidity
           </div>
           <div className="text-center border border-solid border-gray-50 rounded-lg p-5 mx-5">
-            <img src={ethereum} className="h-32 w-32" />
+            <img src={ethereum} className="h-32 w-32" alt="skills" />
             Ethereum
           </div>
           <div className="text-center border border-solid border-gray-50 rounded-lg p-5 mx-5">
-            <img src={solidity} className="h-32 w-32" />
+            <img src={solidity} className="h-32 w-32" alt="skills" />
             Solidity
           </div>
           <div className="text-center border border-solid border-gray-50 rounded-lg p-5 mx-5">
-            <img src={ethereum} className="h-32 w-32" />
+            <img src={ethereum} className="h-32 w-32" alt="skills" />
             Ethereum
           </div>
           <div className="text-center border border-solid border-gray-50 rounded-lg p-5 mx-5">
-            <img src={solidity} className="h-32 w-32" />
+            <img src={solidity} className="h-32 w-32" alt="skills" />
             Solidity
           </div>
           <div className="text-center border border-solid border-gray-50 rounded-lg p-5 mx-5">
-            <img src={ethereum} className="h-32 w-32" />
+            <img src={ethereum} className="h-32 w-32" alt="skills" />
             Ethereum
           </div>
         </div>
@@ -106,6 +109,7 @@ const About = () => {
                 <img
                   src="https://mdbcdn.b-cdn.net/img/new/avatars/6.jpg"
                   class="w-full rounded-t-lg"
+                  alt="user1"
                 />
                 <a href="#!">
                   <div class="absolute top-0 right-0 bottom-0 left-0 h-full w-full overflow-hidden bg-fixed"></div>
@@ -203,6 +207,7 @@ const About = () => {
                 <img
                   src="https://mdbcdn.b-cdn.net/img/new/avatars/8.jpg"
                   class="w-full rounded-t-lg"
+                  alt="user2"
                 />
                 <a href="#!">
                   <div class="absolute top-0 right-0 bottom-0 left-0 h-full w-full overflow-hidden bg-fixed"></div>
@@ -300,6 +305,7 @@ const About = () => {
                 <img
                   src="https://mdbcdn.b-cdn.net/img/new/avatars/15.jpg"
                   class="w-full rounded-t-lg"
+                  alt="user3"
                 />
                 <a href="#!">
                   <div class="absolute top-0 right-0 bottom-0 left-0 h-full w-full overflow-hidden bg-fixed"></div>

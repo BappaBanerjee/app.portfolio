@@ -4,6 +4,7 @@ import Home from "./components/home";
 import Navbar from "./components/navbar";
 import About from "./components/about";
 import Contact from "./components/contact";
+import Project from "./components/projects";
 // import 'bootstrap/dist/css/bootstrap.min.css';
 // import 'bootstrap/dist/js/bootstrap.bundle.js';
 function App() {
@@ -18,6 +19,7 @@ function App() {
           <Route exact path="/" element={<Home />} />
           <Route exact path="/about" element={<About />} />
           <Route exact path="/contact" element={<Contact />} />
+          <Route exact path="/projects" element={<Project />} />
         </Routes>
       </Router>
     </div>

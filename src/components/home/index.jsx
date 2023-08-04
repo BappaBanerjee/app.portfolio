@@ -10,9 +10,9 @@ const Home = () => {
 
   return (
     <div className="flex flex-col justify-center items-center h-screen text-center">
-      <div className="text-4xl md:text-5xl">
+      <div className="text-4xl md:text-5xl mb-3">
         Hi👋 My name is
-        <span className="text-red-700 mb-3 "> Bappa Banerjee.</span>{" "}
+        <span className="text-red-700"> Bappa Banerjee.</span>{" "}
       </div>
       <div className="text-3xl mb-5">
         I am a fullstack Blockchain Developer 👩‍💻
