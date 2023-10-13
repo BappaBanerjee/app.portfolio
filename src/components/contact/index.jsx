@@ -1,5 +1,6 @@
 import React from "react";
-
+import BlogPost from "../blog";
+const data = require("../../data/blog.json");
 const Contact = () => {
   return (
     <div className="container mx-auto md:px-6 pb-10">
@@ -140,5 +141,14 @@ const Contact = () => {
     </div>
   );
 };
+
+// const Contact = () => {
+//   return (
+//     <div className="blog">
+//       {console.log(data)};
+//       <BlogPost post={data.post} />
+//     </div>
+//   );
+// };
 
 export default Contact;
