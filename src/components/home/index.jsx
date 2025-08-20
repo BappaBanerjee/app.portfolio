@@ -5,7 +5,7 @@ import SocialIcons from "../socialIcons";
 const Home = () => {
   useEffect(() => {
     console.log("called");
-    // canvasDots();
+    canvasDots();
   }, []);
 
   return (

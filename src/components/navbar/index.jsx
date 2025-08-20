@@ -1,10 +1,20 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
+  const location = useLocation();
+  const isHome = location.pathname === "/";
   return (
     <div>
-      <nav className="fixed w-full z-20 top-0 left-0">
+      {/* <nav className="fixed w-full z-20 top-0 left-0"> */}
+      {/* <nav className="fixed w-full z-20 top-0 left-0 bg-gray-900/80 backdrop-blur-md shadow-md text-slate-50"> */}
+      <nav
+        className={`fixed w-full z-20 top-0 left-0 ${
+          isHome
+            ? "bg-transparent"
+            : "bg-gray-900/80 backdrop-blur-md shadow-md text-slate-50"
+        }`}
+      >
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <a href="https://flowbite.com/" className="flex items-center">
             <img
@@ -18,7 +28,7 @@ const Navbar = () => {
           </a>
           <div className="flex md:order-2">
             <a
-              href="https://drive.google.com/file/d/1n_sMDU9nQOSNxdmarlcTH2IeKWRzSVDb/view?usp=sharing"
+              href="https://drive.google.com/file/d/1bsZ1dVf0sdUo3_gkYRVqlmL-Vr-UsSc1/view?usp=sharing"
               target="_blank"
               rel="noreferrer"
             >
