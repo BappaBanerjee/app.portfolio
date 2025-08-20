@@ -1,6 +1,4 @@
-import React from "react";
-import BlogPost from "../blog";
-const data = require("../../data/blog.json");
+// const data = require("../../data/blog.json");
 const Contact = () => {
   return (
     <div className="container mx-auto md:px-6 pb-10">
