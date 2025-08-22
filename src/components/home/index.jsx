@@ -4,14 +4,17 @@ import "./home.css";
 import SocialIcons from "../socialIcons";
 const Home = () => {
   useEffect(() => {
-    console.log("called");
-    canvasDots();
+    //disable canvasDots for mobile
+    if (window.innerWidth > 768) {
+      // run only on tablet/desktop
+      canvasDots();
+    }
   }, []);
 
   return (
     <div className="flex flex-col justify-center items-center h-screen text-center">
       <div className="text-4xl md:text-5xl mb-3">
-        Hi👋 My name is
+        Hello👋 I'm
         <span className="text-red-700"> Bappa Banerjee.</span>{" "}
       </div>
       <div className="text-3xl mb-5">

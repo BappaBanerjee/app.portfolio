@@ -3,12 +3,6 @@ import developer from "../../assets/developer4.jpg";
 import { Link } from "react-router-dom";
 import { profiles } from "../../data/profiles.js";
 import ProfileCard from "./profileCard.jsx";
-// import ScrollAnimation from "react-animate-on-scroll";
-
-// const skillsList = Object.keys(skillsImages).map((key) => ({
-//   name: key.split(".")[0], // filename as skill name
-//   img: skillsImages[key].default || skillsImages[key],
-// }));
 
 import { skillsList } from "../../utils/importSkills.js";
 const About = () => {
@@ -28,10 +22,10 @@ const About = () => {
       <div className="flex flex-col-reverse md:flex-row pt-10">
         <div className="basis-1/2 flex flex-col justify-center">
           <div className="flex flex-col space-y-4">
-            <div className="lg:text-4xl text-2xl text-red-700 font-semibold">
+            <div className="text-xl md:text-2xl lg:text-4xl text-red-700 font-semibold">
               Backend & Blockchain Developer
             </div>
-            <div className="lg:text-xl md:text-base ">
+            <div className="text-justify lg:text-xl">
               I’m a backend developer with{" "}
               <span className="font-medium">3+ years of experience </span>
               building scalable, high-performance applications using
@@ -40,7 +34,7 @@ const About = () => {
               optimizing server performance, and deploying production-ready
               systems.
             </div>
-            <div className="lg:text-xl md:text-base ">
+            <div className="text-justify lg:text-xl">
               Alongside backend development, I bring hands-on experience in
               <span className="font-medium text-red-500">
                 {" "}
@@ -69,12 +63,12 @@ const About = () => {
           <img
             src={developer}
             alt="developer"
-            className="h-96 w-96 object-cover rounded-full scale-x-[-1]"
+            className="h-72 w-72 object-cover rounded-full scale-x-[-1] md:h-96 md:w-96"
           />
         </div>
       </div>
 
-      <hr class="h-px my-20 bg-gray-200 border-0 dark:bg-gray-700"></hr>
+      <hr className="h-px my-20 bg-gray-200 border-0 dark:bg-gray-700"></hr>
 
       {/* <ScrollAnimation animateIn="fadeIn">Some Text</ScrollAnimation> */}
 
@@ -83,27 +77,30 @@ const About = () => {
         <div className="text-5xl text-center mb-20">
           My <span className="text-red-700">Skills</span>
         </div>
-        <div className="Skills flex flex-wrap gap-10 items-center justify-center">
+        <div className="Skills grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 lg:gap-10">
           {skillsList.map((skill) => (
             <div
               key={skill.name}
-              className="text-center border border-gray-50 rounded-lg p-5 mx-5"
+              className="text-center border border-gray-200 rounded-lg p-5 hover:bg-red-200 hover:text-red-500 "
             >
-              <img src={skill.img} className="h-32 w-32" alt={skill.name} />
-              <div className="mt-2">{skill.name}</div>
+              <img
+                src={skill.img}
+                className="h-32 w-32 mx-auto"
+                alt={skill.name}
+              />
+              <div className="mt-2 font-semibold">{skill.name}</div>
             </div>
           ))}
         </div>
       </div>
 
-      <hr class="h-px my-20 bg-gray-200 border-0 dark:bg-gray-700"></hr>
+      <hr className="h-px my-20 bg-gray-200 border-0 dark:bg-gray-700"></hr>
 
       {/* Testimonials */}
 
-      <section class="text-center">
-        <h2 class="mb-12 text-5xl font-bold text-red-700">Testimonials</h2>
-
-        <div class="grid gap-x-6 md:grid-cols-3 xl:gap-x-12 md:p-20 p-5">
+      <section className="text-center">
+        <h2 className="mb-12 text-5xl font-bold text-red-700">Testimonials</h2>
+        <div className="grid gap-x-6 md:grid-cols-3 xl:gap-x-12 md:p-20 p-5">
           {profiles.map((profile) => (
             <ProfileCard
               key={profile.name}
