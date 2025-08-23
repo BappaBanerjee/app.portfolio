@@ -1,8 +1,5 @@
-import React from "react";
 import developer from "../../assets/developer4.jpg";
 import { Link } from "react-router-dom";
-import { profiles } from "../../data/profiles.js";
-import ProfileCard from "./profileCard.jsx";
 
 import { skillsList } from "../../utils/importSkills.js";
 import ExperienceSection from "./experince.jsx";
