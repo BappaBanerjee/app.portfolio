@@ -6,6 +6,7 @@ import About from "./components/about";
 import Contact from "./components/contact";
 import Project from "./components/projects";
 import BlogPost from "./components/blog";
+import "./css/global.css";
 // import 'bootstrap/dist/css/bootstrap.min.css';
 // import 'bootstrap/dist/js/bootstrap.bundle.js';
 function App() {

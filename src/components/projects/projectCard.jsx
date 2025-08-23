@@ -9,7 +9,7 @@ const ProjectCard = ({
 }) => {
   return (
     <div
-      className={`block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700
+      className={`block rounded-2xl overflow-hidden bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700
         `}
     >
       {/* uncomment for alternate images and content */}
@@ -24,7 +24,7 @@ const ProjectCard = ({
             src={image}
             alt={title}
             // className="w-full rounded-t-lg md:rounded-tr-none md:rounded-bl-lg"
-            className="w-full h-full object-cover md:h-full rounded-t-lg md:rounded-tr-none md:rounded-bl-lg"
+            className="w-full h-auto lg:h-full object-cover md:h-full"
             // className="w-full h-full max-w-xs md:max-w-sm lg:max-w-md object-cover rounded-t-lg md:rounded-tr-none md:rounded-bl-lg"
           />
         </div>

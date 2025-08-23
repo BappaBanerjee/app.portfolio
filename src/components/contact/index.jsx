@@ -1,21 +1,26 @@
 // const data = require("../../data/blog.json");
 import React from "react";
 import emailjs from "emailjs-com";
+import { useState } from "react";
 
 const SERVICE_ID = process.env.REACT_APP_SERVICE_ID;
 const TEMPLATE_ID = process.env.REACT_APP_TEMPLATE_ID;
 const PUBLIC_KEY = process.env.REACT_APP_PUBLIC_KEY;
 
 const Contact = () => {
+  const [buttonText, setButtonText] = useState("Send");
   const handleOnSubmit = (e) => {
     e.preventDefault();
+    setButtonText("Sending...");
     emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, e.target, PUBLIC_KEY).then(
       (result) => {
-        console.log(result.text);
+        setButtonText("Sent ✅");
+        setTimeout(() => setButtonText("Send"), 3000); // reset after 3s
         alert("Message Sent Successfully");
       },
       (error) => {
         console.log(error.text);
+        setButtonText("Retry");
         alert("Something went wrong!");
       }
     );
@@ -90,13 +95,16 @@ const Contact = () => {
                 <div className="relative mb-6" data-te-input-wrapper-init>
                   <input
                     type="text"
-                    className="peer block min-h-[auto] w-full rounded border-0 border-solid border-b-2 border-gray-50 bg-transparent py-[0.32rem] px-3 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:peer-focus:text-primary [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+                    className="peer block w-full rounded border-0 border-b-2 border-gray-300 bg-transparent px-3 pt-5 pb-2 text-base text-white placeholder-transparent focus:border-red-600 focus:outline-none focus:ring-0 sm:text-lg"
                     id="name"
                     name="name"
                     placeholder="Name"
+                    required
                   />
                   <label
-                    className="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
+                    className="absolute left-3 top-0 text-gray-500 text-base transition-all duration-200 ease-out
+               peer-placeholder-shown:top-4 peer-placeholder-shown:text-gray-400 peer-placeholder-shown:text-base
+               peer-focus:top-0 peer-focus:text-red-600 peer-focus:text-sm"
                     for="name"
                   >
                     Name
@@ -105,13 +113,16 @@ const Contact = () => {
                 <div className="relative mb-6" data-te-input-wrapper-init>
                   <input
                     type="email"
-                    className="peer block min-h-[auto] w-full rounded border-0 border-solid border-b-2 border-gray-50 bg-transparent py-[0.32rem] px-3 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:peer-focus:text-primary [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+                    className="peer block w-full rounded border-0 border-b-2 border-gray-300 bg-transparent px-3 pt-5 pb-2 text-base text-white placeholder-transparent focus:border-red-600 focus:outline-none focus:ring-0 sm:text-lg"
                     id="email"
                     name="email"
                     placeholder="Email address"
+                    required
                   />
                   <label
-                    className="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
+                    className="absolute left-3 top-0 text-gray-500 text-base transition-all duration-200 ease-out
+               peer-placeholder-shown:top-4 peer-placeholder-shown:text-gray-400 peer-placeholder-shown:text-base
+               peer-focus:top-0 peer-focus:text-red-600 peer-focus:text-sm"
                     for="email"
                   >
                     Email address
@@ -119,15 +130,18 @@ const Contact = () => {
                 </div>
                 <div className="relative mb-6" data-te-input-wrapper-init>
                   <textarea
-                    className="peer block min-h-[auto] w-full rounded border-0 border-solid border-b-2 border-gray-50 bg-transparent py-[0.32rem] px-3 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+                    className="peer block w-full rounded border-0 border-b-2 border-gray-300 bg-transparent px-3 pt-5 pb-2 text-base text-white placeholder-transparent focus:border-red-600 focus:outline-none focus:ring-0 sm:text-lg"
                     id="message"
                     rows="3"
                     name="message"
                     placeholder="Your message"
+                    required
                   ></textarea>
                   <label
                     for="message"
-                    className="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
+                    className="absolute left-3 top-0 text-gray-500 text-base transition-all duration-200 ease-out
+               peer-placeholder-shown:top-4 peer-placeholder-shown:text-gray-400 peer-placeholder-shown:text-base
+               peer-focus:top-0 peer-focus:text-red-600 peer-focus:text-sm"
                   >
                     Message
                   </label>
@@ -139,7 +153,7 @@ const Contact = () => {
                   data-te-ripple-color="light"
                   className="inline-block w-full rounded bg-primary bg-red-700 hover:bg-red-800  px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] lg:mb-0"
                 >
-                  Send
+                  {buttonText}
                 </button>
               </form>
             </div>
@@ -149,14 +163,5 @@ const Contact = () => {
     </div>
   );
 };
-
-// const Contact = () => {
-//   return (
-//     <div className="blog">
-//       {console.log(data)};
-//       <BlogPost post={data.post} />
-//     </div>
-//   );
-// };
 
 export default Contact;

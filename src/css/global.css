@@ -1,0 +1,23 @@
+/* global.css */
+
+/* Heading for main sections */
+.section-heading {
+  @apply text-4xl sm:text-5xl md:text-6xl font-bold text-center;
+}
+
+.section-subheading {
+  @apply text-lg sm:text-xl md:text-2xl text-gray-600 dark:text-gray-300 text-center;
+}
+
+.section-highlight {
+  @apply text-red-700 font-semibold;
+}
+
+/* Heading for subsections */
+.section-title {
+  @apply text-4xl font-bold text-center mb-12;
+}
+
+.section-title-highlight {
+  @apply text-red-600;
+}
