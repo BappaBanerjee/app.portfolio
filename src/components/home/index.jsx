@@ -13,12 +13,12 @@ const Home = () => {
 
   return (
     <div className="flex flex-col justify-center items-center h-screen text-center">
-      <div className="text-4xl md:text-5xl mb-3">
-        Hello👋 I'm
-        <span className="text-red-700"> Bappa Banerjee.</span>{" "}
+      <div className="text-3xl sm:text-4xl md:text-5xl mb-3">
+        Hi there 👋 I'm{" "}
+        <span className="text-red-700 whitespace-nowrap"> Bappa Banerjee</span>
       </div>
-      <div className="text-3xl mb-5">
-        I am a fullstack Blockchain Developer 👩‍💻
+      <div className="text-xl sm:text-2xl md:text-3xl mb-5 text-gray-00">
+        Backend Blockchain Developer 👨‍💻
       </div>
       <SocialIcons />
       <canvas className="connecting-dots"></canvas>
